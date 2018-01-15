@@ -1,0 +1,5 @@
+<apex:page >
+  <apex:image url="{!$Resource.cs1}" width="100" height="100"/><br/>
+ <p> This is First text</p>
+ <c:c1 Text="This is My First Component" Textcolor="Red"></c:c1>
+</apex:page>

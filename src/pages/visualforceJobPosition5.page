@@ -1,0 +1,10 @@
+<apex:page controller="cs1">
+ <apex:pageBlock >
+ <apex:pageBlockTable Title="List of Jobpositions"  value="{!jpact}" var="j">
+ 
+ <apex:column value="{!j.Name}" / >
+ <apex:column value="{!j.Functional_Area__c}" / >
+ <apex:column value="{!j.Status__c}" />
+ </apex:pageBlockTable>
+ </apex:pageBlock>
+</apex:page>

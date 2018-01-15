@@ -1,0 +1,59 @@
+<apex:page controller="Createcontroller4" >
+<apex:form >   
+<apex:pageBlock title="details of Accounts And Contacts">
+<apex:commandButton action="{!getrecords}" value="search Accounts" />
+<apex:commandButton action="{!getcrecords}" value="search Contacts" />
+<apex:commandButton action="{!processselected}" value="saveAccount" />
+<apex:commandButton action="{!processselected1}" value="saveContact" />
+  
+<apex:pageBlockSection title="Accounts And Contact Details" columns="2">
+<apex:pageBlockTable value="{!lstwrp}"  title="Account Details" var="w" >
+<apex:column >
+   
+<apex:inputCheckbox value="{!w.selected}" />
+ 
+</apex:column>     
+<apex:column value="{!w.acc.Name}"/>    
+<apex:column value="{!w.acc.Phone}"/>
+<apex:column value="{!w.acc.BillingCity}"/>    
+</apex:pageBlockTable>    
+
+     
+<apex:pageBlockTable title="Contact Details" value="{!lstwrp1}" var="w">
+<apex:column >
+    
+<apex:inputCheckbox value="{!w.selected}" />
+ 
+</apex:column> 
+<apex:column value="{!w.con.FirstName}"/>    
+<apex:column value="{!w.con.Email}"/>
+   
+</apex:pageBlockTable>    
+</apex:pageBlockSection>
+<apex:pageBlockSection title="selected Account Details" columns="2">
+<apex:pageBlockTable value="{!lstselected}" var="l"> 
+  <apex:column >
+  
+  <apex:commandLink value="{!l.Name}" reRender="dl">
+      <apex:param name="x" value="{!l.id}"/>
+      <apex:param name="d" value="{!l.Name}"/>
+      </apex:commandLink>
+    </apex:column>
+<apex:column value="{!l.Phone}"/>
+<apex:column value="{!l.BillingCity}"/>    
+</apex:pageBlockTable>
+    <apex:pageBlock id="dl" title="{!$CurrentPage.parameters.d}">
+    <apex:detail subject="{!$CurrentPage.parameters.x}" relatedList="true" /> 
+    </apex:pageBlock>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection >
+ <apex:pageBlockTable value="{!lstselected1}" var="s" >
+<apex:column value="{!s.FirstName}"/> 
+<apex:column value="{!s.Email}"/>
+
+</apex:pageBlockTable> 
+</apex:pageBlockSection>
+    
+</apex:pageBlock> 
+ </apex:form> 
+</apex:page>

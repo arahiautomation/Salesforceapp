@@ -1,0 +1,39 @@
+<apex:page controller="jpja" sidebar="false" >
+<apex:pageBlock >
+
+
+<apex:pageBlockSection >
+
+<apex:tabPanel switchType="Ajax">
+
+
+<apex:tab label="Jobpositions" >
+
+
+<apex:pageBlockTable title="JobPositions " value="{!jps}" var="p">
+<apex:column value="{!p.Name}"/>
+<apex:column value="{!p.Functional_Area__c}"/>
+<apex:column value="{!p.Status__c}"/>
+
+
+</apex:pageBlockTable>
+</apex:tab>
+
+<apex:tab label="Jobapplications">
+
+
+<apex:pageBlockTable title=" JobApplications" value="{!jas}" var="a">
+
+
+<apex:column value="{!a.JobCandidate__c}"/>
+<apex:column value="{!a.JobPosition__c}"/>
+<apex:column value="{!a.Total_Rating__c}"/>
+
+</apex:pageBlockTable>
+</apex:tab>
+</apex:tabpanel>
+</apex:pageBlockSection> 
+
+</apex:pageBlock>
+
+</apex:page>

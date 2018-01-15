@@ -1,0 +1,23 @@
+<apex:page controller="Search">
+  <apex:form >
+  <apex:pageBlock title="Search results">
+  SerachKeyword : <apex:inputText value="{!keyword}" />
+  <apex:commandButton value="Search" action="{!search_now}"/>
+  </apex:pageBlock>
+  <apex:pageBlock >
+  <apex:pageBlockTable title="List Of Contacts" value="{!results}" var="r"  >
+  <apex:column headerValue="FirstName">
+  <apex:commandlink value="{!r.FirstName}">
+  <apex:param name="ContactName" value="{!r.FirstName}"/>
+  </apex:commandlink>
+  </apex:column>
+  <apex:column value="{!r.LastName}"/>
+  <apex:column value="{!r.Phone}"/>
+  <apex:column value="{!r.Fax}"/>
+  </apex:pageBlockTable>
+  </apex:pageBlock>
+  <apex:pageBlock >
+  <apex:detail subject="{!$CurrentPage.Parameters.ContactName}"/>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

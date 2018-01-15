@@ -1,0 +1,20 @@
+<apex:page controller="ccontroller1">
+<apex:form >
+<apex:PageBlock Title="List of Accounts and opportunity">
+<apex:pageBlockSection >
+<apex:pageBlockTable Title="List of Accounts" value="{!listacc}" var="acc">
+<apex:column Title="Account ID">
+<apex:commandButton value="{!acc.id}" />
+</apex:column>
+<apex:column value="{!acc.Name}"/>
+</apex:pageBlockTable>
+
+<apex:pageBlockTable Title="List of Contacts" value="{!listcon}" var="con">
+<apex:column value="{!con.id}" />
+<apex:column value="{!con.Name}"/>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:PageBlock>
+
+</apex:form>
+</apex:page>

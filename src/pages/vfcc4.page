@@ -1,0 +1,7 @@
+<apex:page controller="Myopp">
+<apex:form >
+  <apex:pageBlock Title="Opportunity">
+  <apex:inputField value="{!Account.Name}" />
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

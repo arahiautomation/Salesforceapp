@@ -1,0 +1,19 @@
+<apex:page controller="wizard">
+Accountpage
+<apex:form >
+<apex:pageBlock >
+
+  <apex:pageBlockButtons >
+  <apex:commandButton value="Nextpage" Action="{!gotopage2}"/>
+  <apex:commandButton value="GotoReviewpage" action="{!gotopage4}"/>
+  </apex:pageBlockButtons>
+  <apex:pageBlockSection columns="1">
+  <apex:InputField value="{!a.Name}"/>
+<apex:inputField value="{!a.Type}"/>
+ <apex:inputField value="{!a.Phone}"/>
+ <apex:inputField value="{!a.Fax}"/>
+  </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,20 @@
+<apex:page controller="Createcontroller3">
+<apex:form >
+    
+ <apex:pageMessages ></apex:pageMessages>   
+<apex:pageBlock title="Search Account by city">
+<apex:inputText value="{!city}"/>
+    
+<apex:commandButton value="Search City" action="{!getsearchstring}"/>    
+<apex:pageBlockSection title="Account Details">
+<apex:pageBlockTable value="{!wrplst}" var="w">
+<apex:column value="{!w.acc.Name}"/>    
+ <apex:column value="{!w.acc.Phone}"/>
+ <apex:column value="{!w.acc.BillingCity}"/>
+</apex:pageBlockTable>    
+</apex:pageBlockSection>    
+    
+</apex:pageBlock>
+    
+</apex:form>   
+</apex:page>

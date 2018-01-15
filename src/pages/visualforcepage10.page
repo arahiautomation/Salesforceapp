@@ -1,0 +1,11 @@
+<apex:page controller="sendemail">
+ <apex:form >
+<apex:pageBlock title="Email service">
+
+
+
+</apex:pageBlock> 
+ 
+ 
+ </apex:form> 
+</apex:page>

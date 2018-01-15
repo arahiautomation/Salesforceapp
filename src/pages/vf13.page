@@ -1,0 +1,19 @@
+<apex:page controller="cselect" >
+<apex:form >
+
+<apex:outputLabel >Slect Color </apex:outputLabel>
+<apex:selectList value="{!selectedcolor}" size="1">
+<apex:selectOptions value="{!lstcolor}"/>
+<apex:actionSupport event="onchange" reRender="PBS" action="{!meth}"/>
+
+</apex:selectList>
+
+<apex:pageBlock >
+<apex:pageBlockSection id="PBS">
+{!selectedcolor}
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

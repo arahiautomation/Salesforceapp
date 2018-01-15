@@ -1,0 +1,5 @@
+<apex:page controller="cc2" sidebar="false">
+
+result : {!Mynumber}
+
+</apex:page>

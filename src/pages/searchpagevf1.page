@@ -1,0 +1,9 @@
+<apex:page controller="Searchwrapclass" >
+  <apex:form >
+ <apex:pageBlock >
+ <apex:pageBlockTable value="{!listwrp}" var="w">
+ </apex:pageBlockTable>
+ 
+ </apex:pageBlock>
+  </apex:form>
+</apex:page>

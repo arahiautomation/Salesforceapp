@@ -1,0 +1,12 @@
+<apex:page standardController="JobPosition__c" id="thePage">
+ <apex:form >
+
+ <apex:pageBlock >
+ <apex:pageBlockTable value="{!JobPosition__c}" var="JP">
+ <apex:column headerValue="description" />
+ <apex:column value="{!JP.Name}"/>
+ 
+ </apex:pageBlockTable>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

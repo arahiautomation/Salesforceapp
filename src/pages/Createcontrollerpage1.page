@@ -1,0 +1,19 @@
+<apex:page controller="Createcontroller1">
+ <apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection title="Account Details">
+<apex:pageBlockTable value="{!listwrap}" var="l">
+    <apex:column >
+    <apex:inputCheckbox value="{!l.selected}"/>
+    </apex:column> 
+    <apex:column value="{!l.acc.Name}" />
+    <apex:column value="{!l.acc.phone}" />
+    <apex:column value="{!l.acc.Fax}" />
+    <apex:column value="{!l.acc.BillingCity}" />
+</apex:pageBlockTable>    
+</apex:pageBlockSection>    
+     
+</apex:pageBlock>    
+    
+</apex:form>   
+</apex:page>

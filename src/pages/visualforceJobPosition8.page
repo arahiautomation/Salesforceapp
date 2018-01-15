@@ -1,0 +1,15 @@
+<apex:page controller="cs3" >
+
+ <apex:form >
+ <apex:pageBlock >
+ <apex:inputText value="{!keyword}"/> 
+ <apex:commandButton value="search keyword" action="{!showresults}"/>
+ 
+ <apex:pageBlockTable title="JobPosition List" value="{!results}" var="j">
+ <apex:column value="{!j.Name}"/>
+ <apex:column value="{!j.Functional_Area__c}"/>
+ <apex:column value="{!j.Status__c}"/>
+ </apex:pageBlockTable>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page >
+ Congratulation {!$User.FirstName} <br/>
+ You have sucessfully created Account,contact,opportunity.
+</apex:page>

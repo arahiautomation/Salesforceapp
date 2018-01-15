@@ -1,0 +1,15 @@
+<apex:page standardController="Candidate__c" >
+ <apex:form >
+ <apex:pageBlock >
+ <apex:pageBlockTable value="{!Candidate__c}" var="CA">
+ <apex:column headerValue="Candaidatesname"/>
+ <apex:column value="{!Candidate__c.Name}"> 
+ </apex:column>
+ 
+ 
+ </apex:pageBlockTable>
+ 
+ </apex:pageBlock>
+ 
+ </apex:form>
+</apex:page>

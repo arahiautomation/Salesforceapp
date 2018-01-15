@@ -1,0 +1,13 @@
+<apex:page controller="searchresult" >
+<apex:form >
+<apex:outputText value="EnterCity"/>&nbsp;<apex:inputText value="{!city}"/>&nbsp;
+<apex:commandButton value="searchcity" action="{!dosearch}"/>
+<apex:pageBlock >
+<apex:pageBlockTable value="{!results}" var="r">
+<apex:column value="{!r.Name}"/>
+<apex:column value="{!r.phone}"/>
+<apex:column value="{!r.BillingCity}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

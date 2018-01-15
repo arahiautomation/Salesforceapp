@@ -1,0 +1,17 @@
+<apex:page controller="sendemail">
+<apex:form >
+<apex:pageBlock title="Email service">
+ <b> Enter subject : </b> <apex:inputText value="{!subject}" maxlength="100"/><p/>
+<apex:outputLabel for="emailbody" value="Enter Text Here:">
+ 
+<apex:inputTextarea value="{!emailbody}" cols="50"/><p/>
+ 
+ </apex:outputLabel>
+<apex:pageBlockButtons location="both">
+<apex:commandButton action="{!send}" value="Send" />
+
+</apex:pageBlockButtons>   
+</apex:pageBlock>>
+
+</apex:form>  
+</apex:page>

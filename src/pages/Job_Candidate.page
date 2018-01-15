@@ -1,0 +1,13 @@
+<apex:page sidebar="False" standardController="Job_Candidate__c" id="thepage">
+<apex:form >
+<apex:pageBlock >
+
+<apex:pageBlockTable value="{!Job_Candidate__c}" var="JC">
+<apex:column value="{!Job_Candidate__c.First_Name__c}" title="FirstName">
+</apex:column>
+<apex:column value="{!JC.City__c}">
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

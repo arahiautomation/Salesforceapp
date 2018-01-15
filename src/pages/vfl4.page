@@ -1,0 +1,31 @@
+<apex:page standardController="Opportunity" recordSetVar="opp">
+<apex:form >
+<apex:pageBlock Title="Viewing opportunities">
+<apex:pageMessages />
+<apex:panelGrid columns="2">
+<apex:outputLabel value="View:">
+</apex:outputLabel>
+<apex:selectList value="{!filterid}">
+<apex:actionSupport event="OnChange" reRender="opp_table"/>
+<apex:selectOptions value="{!Listviewoptions}">
+</apex:selectOptions>
+</apex:selectList>
+
+</apex:panelGrid>
+
+<apex:commandLink value="Go" action="{!List}"/>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!opp}" var="o" id="opp_table">
+ <apex:column value="{!o.Name}"/>
+ <apex:column headerValue="Stage">
+<apex:inputField value="{!o.stageName}"/>
+ </apex:column>
+  <apex:column headerValue="close date">
+<apex:inputField value="{!o.closeDate}"/>
+ </apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

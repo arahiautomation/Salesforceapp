@@ -1,0 +1,32 @@
+<apex:page controller="Createcontroller2" >
+ <apex:form >
+ <apex:pageBlock >
+     <apex:commandButton value="Select" action="{!getaccselected}"/>
+ <apex:pageBlockSection title="Account and Contact Details">
+<apex:pageBlockTable value="{!wraplststring}" var="w">
+ <apex:column headerValue="Action">
+  <apex:inputCheckbox value="{!w.selected}"/>   
+ </apex:column>     
+<apex:column headerValue="AccountName">
+  {!w.AName}  
+ </apex:column>
+<apex:column headerValue="AccountPhone">
+  {!w.APhone}   
+ </apex:column>
+<apex:column headerValue="ContactFirstName">
+ {!w.CFirstName}  
+ </apex:column>
+<apex:column headerValue="ContactEmail">
+ {!w.CEmail}   
+ </apex:column>   
+ </apex:pageBlockTable>     
+<apex:pageBlockTable value="{!selst}" var="s">
+  <apex:column value="{!s.AName}"/>   
+  <apex:column value="{!s.APhone}"/> 
+    <apex:column value="{!s.CFirstName}"/> 
+    <apex:column value="{!s.CEmail}"/> 
+     </apex:pageBlockTable>
+</apex:pageBlockSection>    
+</apex:pageBlock>   
+</apex:form>   
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page controller="Accountlist">
+
+<apex:pageBlock title="AccountListWithDifferent Type">
+<apex:TabPanel >
+<apex:tab label="DirectList">
+<apex:pageBlockTable value="{!dirlist}" var="a">
+<apex:column value="{!a.Name}"/>
+<apex:column value="{!a.Phone}"/>
+<apex:column value="{!a.Type}"/>
+</apex:pageBlockTable>
+</apex:tab>
+<apex:tab label="opportunityList">
+<apex:pageBlockTable value="{!opplist}" var="a">
+<apex:column value="{!a.Name}"/>
+<apex:column value="{!a.StageName}"/>
+<apex:column value="{!a.CloseDate}"/>
+</apex:pageBlockTable>
+</apex:tab>
+</apex:TabPanel>
+</apex:pageBlock>
+
+</apex:page>

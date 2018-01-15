@@ -1,0 +1,25 @@
+<apex:page controller="searchacc"  sidebar="false">
+<apex:form >
+ <apex:pageBlock title="Search List of Accounts And Contacts">
+ Enter keyword : <apex:inputText value="{!keyword1}"/>
+ <apex:commandButton value="SearchNow" action="{!Search_now}"/>
+ 
+  <apex:pageBlockSection columns="2">
+  <apex:pageBlockTable title="Account List" value="{!result1}" var="a">
+  <apex:column headerValue="AccountID"  >
+  
+  <apex:commandLink value="{!a.Name}" reRender="Detail" >
+  <apex:param Name="AccountID" Value="{!a.Id}"  />
+  </apex:commandLink>
+  </apex:column>
+  <apex:column value="{!a.Phone}"/>
+    <apex:column value="{!a.Fax}"/>
+  </apex:pageBlockTable>
+  <apex:pageBlock id="Detail">
+ 
+  <apex:detail subject="{!$CurrentPage.Parameters.AccountID}" relatedList="True"  inlineEdit="True"/>
+  </apex:pageBlock>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

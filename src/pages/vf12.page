@@ -1,0 +1,39 @@
+<apex:page controller="candidateInterviewSchedule"  renderAs="PDF" label="List of JobPositions"> 
+<apex:dataTable value="{!JobApplication}" title="List of JobPositions" var="jp"
+ ColumnsWidth="30px,200px,200px" rules="rows" cellpadding="4px">
+<apex:column style="border:1px solid Black">
+<apex:facet name="Header">
+Jobposition Name
+</apex:facet>
+<apex:outputText value="{!jp.Name}">
+</apex:outputText>
+</apex:column>
+
+<apex:column style="border:1px solid Black">
+<apex:facet name="Header">
+Jobposition Description
+</apex:facet>
+<apex:outputText value="{!jp.Job_Description__c}">
+</apex:outputText>
+</apex:column>
+
+<apex:column style="border:1px solid Black">
+<apex:facet name="Header">
+Jobposition Functional Area
+</apex:facet>
+<apex:outputText value="{!jp.Functional_Area__c}">
+</apex:outputText>
+</apex:column>
+
+<apex:column style="border:1px solid Black">
+<apex:facet name="Header">
+Jobposition Status
+</apex:facet>
+<apex:outputText value="{!jp.Status__c}">
+</apex:outputText>
+</apex:column>
+</apex:dataTable>
+
+
+
+</apex:page>

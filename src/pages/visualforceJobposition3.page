@@ -1,0 +1,60 @@
+<apex:page standardController="JobPosition__c" recordSetVar="JPS" >
+<apex:form >
+<apex:pageBlock >
+<apex:actionRegion >
+<apex:outputText value="Record per page">
+<apex:selectList value="{!pagesize}" size="1">
+<apex:selectOption itemValue="10" itemLabel="10"></apex:selectOption>
+<apex:selectOption itemValue="20" itemLabel="20"></apex:selectOption>
+<apex:selectOption itemValue="30" itemLabel="30"></apex:selectOption>
+<apex:selectOption itemValue="40" itemLabel="40">
+</apex:selectOption>
+
+
+</apex:selectList>
+
+
+</apex:outputText>
+
+</apex:actionRegion>
+<apex:pageBlockSection >
+
+  <apex:pageBlockTable value="{!JPS}" var="JP"> 
+<apex:column headerValue="JobPosition Name" > 
+<apex:commandLink >
+  {!JP.Name}
+
+<apex:param name="x" value="{!JP.ID}">
+
+<apex:actionStatus startText="Start fetching data" stopText="" id="Status">
+  </apex:actionStatus>
+  </apex:param>
+  </apex:commandLink>
+</apex:column>
+<apex:column value="{!JP.Location__c}"/>
+    
+     <apex:column value="{!JP.Max_Pay__c}"/>
+    
+     <apex:column value="{!JP.Min_Pay__c}"/>
+  </apex:pageBlockTable>
+ </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:form>
+
+
+
+  <apex:outputPanel id="Jobpositiondetail"> 
+  <apex:detail subject="{!$CurrentPage.parameters.x}"/>
+  </apex:outputPanel>
+  
+ <apex:form >
+ 
+  <apex:panelGrid columns="2" id="navigation" >
+  <apex:commandLink action="{!Next}" value="Next"/>
+  
+  <apex:commandLink action="{!Previous}" Value="Previous"/>
+  </apex:panelGrid>
+  
+  </apex:form>
+
+</apex:page>

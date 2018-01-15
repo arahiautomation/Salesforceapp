@@ -1,0 +1,7 @@
+<apex:page controller="MyAcc">
+<apex:form >
+ congratulation{!$User.FirstName}<br/>
+ This is first controller
+ <apex:inputField value="{!Account.Name}"/>
+ </apex:form>
+</apex:page>

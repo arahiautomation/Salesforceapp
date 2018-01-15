@@ -1,0 +1,35 @@
+<apex:page standardController="JobPosition__c" recordSetVar="JPS" >
+<apex:form >
+ <apex:pageBlock title="JobPosition Lists">
+<apex:pageBlockSection >
+  <apex:pageBlockTable value="{!JPS}" var="JP"> 
+<apex:column headerValue="JobPosition Name"> 
+<apex:commandLink rerender="Jobpositiondetail" status="Status"> 
+{!JP.Name} 
+
+<apex:param name="x" value="{!JP.ID}"/>
+</apex:commandLink>
+</apex:column>
+<apex:column value="{!JP.Location__c}"/>
+    <apex:column headerValue="Maxpay">
+     <apex:inputField value="{!JP.Max_Pay__c}"/>
+    </apex:column>
+     <apex:column value="{!JP.Min_Pay__c}"/>
+  </apex:pageBlockTable>
+  <apex:actionStatus startText="Start fetching data" stopText="completed" id="Status">
+  
+  </apex:actionStatus>
+  <apex:outputPanel id="Jobpositiondetail"> 
+  <apex:detail subject="{!$CurrentPage.parameters.x}"/>
+  </apex:outputPanel>
+  
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  <apex:panelGrid columns="2" >
+  <apex:commandLink action="{!Next}" value="Next" rendered="{!hasNext}"/>
+  
+  <apex:commandLink action="{!Previous}" Value="Previous" rendered="{!hasNext}"/>
+  </apex:panelGrid>
+  
+</apex:form>
+</apex:page>

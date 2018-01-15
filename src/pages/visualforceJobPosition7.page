@@ -1,0 +1,28 @@
+<apex:page controller="jpew" sidebar="false" showHeader="false">
+<apex:form >
+ <apex:pageBlock >
+ 
+<apex:pageBlockButtons location="top">
+ <apex:commandButton value="go to jobpositions" action="{!openjps}" reRender="label1"/>
+ <apex:commandButton value="go to Employement website" action="{!budgetew}" reRender="label2"/>
+  <apex:commandButton value="Go to pageReference" action="{!gotopage}" />
+ </apex:PageBlockButtons>
+ <apex:pageBlockSection >
+ <apex:pageBlockTable title="JobPositions" value="{!jps}" var="j" id="label1">
+ <apex:column value="{!j.Name}"/>
+  <apex:column value="{!j.Functional_Area__c}"/>
+   <apex:column value="{!j.Status__c}"/>
+ </apex:pageBlockTable>
+
+ <apex:pageBlockTable value="{!ews}" var="e" id="label2">
+ <apex:column value="{!e.Maximum_Budget__c}"/>
+ <apex:column value="{!e.PricePerPost__c}"/>
+ 
+ </apex:pageBlockTable>
+ </apex:pageBlockSection>
+ 
+ </apex:pageBlock> 
+ 
+
+ </apex:form>
+</apex:page>

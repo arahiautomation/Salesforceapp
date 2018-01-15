@@ -1,0 +1,13 @@
+<apex:component >
+<apex:attribute name="Text" description="This is the description of Text" type="String" required="true"/>
+
+<apex:attribute name="Textcolor" description="This is the description of text color" type="String" required="true"/>
+
+
+
+
+
+<h1 style="color:{!Textcolor}">
+<apex:outputText Value="{!Text}"/>
+</h1>
+</apex:component>

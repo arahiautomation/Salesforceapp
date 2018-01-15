@@ -1,0 +1,9 @@
+<apex:page standardController="Account" recordSetVar="acc" tabStyle="Account">
+<apex:form >
+<apex:selectList value="{!Filterid}">
+<apex:selectOptions value="{!Listviewoptions}">
+</apex:selectOptions>
+</apex:selectList>
+<apex:commandButton value="Go" action="{!List}"/>
+</apex:form>
+</apex:page>

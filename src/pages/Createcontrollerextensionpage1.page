@@ -1,0 +1,12 @@
+<apex:page standardController="Account" recordSetVar="acc" extensions="Createcontrollere1">
+<apex:pageBlock >
+    {!string}
+<apex:pageBlockSection title="Account Details" columns="2">
+<apex:pageBlockTable value="{!acc}" var="a">
+ <apex:column value="{!a.Name}" />   
+  <apex:column value="{!a.Phone}" />   
+ <apex:column value="{!a.BillingCity}" />    
+</apex:pageBlockTable>    
+</apex:pageBlockSection>    
+</apex:pageBlock>    
+</apex:page>

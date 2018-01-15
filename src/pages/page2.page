@@ -1,0 +1,21 @@
+<apex:page standardController="account" recordSetVar="accounts" extensions="agesizeExt">
+ <apex:form >
+ <apex:pageBlock title="All Accounts across the organisation">
+ 
+ 
+ <apex:pageBlockTable value="{!accounts}" var="a">
+ <apex:column headervalue="Name"> 
+ <apex:commandLink value="{!a.Name}" action="/{!a.id}"/>>
+ </apex:column>> 
+ <apex:column value="{!a.Phone}"/>>
+ <apex:column value="{!a.AccountNumber}"/>>
+ 
+ <apex:column value="{!a.Rating}"/>>
+ </apex:pageBlockTable>>
+ </apex:pageBlock>>
+ <apex:panelgrid columns="2" >
+ <apex:commandLink action="{!previous}">previous</apex:commandLink>
+ <apex:commandLink action="{!Next}">Next</apex:commandLink>
+ </apex:panelgrid>>
+ </apex:form>>
+</apex:page>

@@ -1,0 +1,31 @@
+<apex:page sidebar="false" standardController="Account">
+<Apex:form >
+ <apex:pageBlock title="MY First Class">
+ <apex:pageBlockButtons >
+ <apex:commandButton action="{!save}" value="save"/>>
+ <apex:commandButton action="{!cancel}" value="cancel"/>>
+ </apex:pageBlockButtons>>
+ <apex:pageblockSection title="My First Project">
+ <apex:outputfield value="{!Account.Name}"/>
+ 
+ <apex:outputfield value="{!Account.AccountNumber}"/>
+ <apex:outputfield value="{!Account.Fax}"/>
+ <apex:outputfield value="{!Account.NumberOfEmployees}"/>
+ <apex:outputfield value="{!Account.Rating}"/>
+ <apex:outputfield value="{!Account.Type}"/>
+ <apex:inputField value="{!Account.AccountNumber}"/>
+ <apex:inputfield value="{!Account.Fax}"/>
+ <apex:inputfield value="{!Account.NumberOfEmployees}"/>
+ <apex:inputfield value="{!Account.Rating}"/>
+ <apex:inputfield value="{!Account.Type}"/>>
+ </apex:pageblockSection>>
+ 
+ 
+  </apex:pageBlock>>
+ <apex:pageBlock >
+ My Second Class
+ <apex:pageblockSection title="My Second Project"></apex:pageblockSection>>
+ 
+  </apex:pageBlock>>
+  </Apex:form>>
+</apex:page>
